@@ -1,0 +1,11 @@
+@mixin object-cover {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+@mixin responsive($screen-size) {
+  @media only screen and (max-width: $screen-size) {
+    @content;
+  }
+}
