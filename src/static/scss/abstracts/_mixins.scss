@@ -9,3 +9,12 @@
     @content;
   }
 }
+
+@mixin soft-animate {
+  transition: $main-transition;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+}

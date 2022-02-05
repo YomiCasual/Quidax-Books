@@ -1,0 +1,63 @@
+.navbar__container {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.navbar {
+  background-color: $primary-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+
+  &__icons {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    &--books {
+      @include soft-animate;
+      position: relative;
+
+      .badge {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+      }
+    }
+
+    .book__icon {
+      background-color: $secondary-ash;
+      padding: 1rem 1.2rem;
+      border-radius: 50%;
+    }
+  }
+}
+
+.search__input {
+  display: flex;
+  align-items: center;
+  align-items: stretch;
+
+  input {
+    border: 1px solid #dddddd;
+    width: 50rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.4rem;
+    transition: $main-transition;
+
+    &:focus,
+    &:active {
+      box-shadow: none;
+      outline: none;
+      padding-left: 2.3rem;
+    }
+  }
+
+  &--icon {
+    padding: 1rem;
+    border: 1px solid #dddddd;
+    border-left: 0px;
+    background-color: $secondary-ash;
+    cursor: pointer;
+  }
+}

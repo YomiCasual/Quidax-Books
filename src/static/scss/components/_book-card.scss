@@ -1,0 +1,51 @@
+.book__card {
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+  transition: $main-transition;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &--image {
+    width: 11rem;
+    height: 18rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 1rem;
+    .title {
+      margin-bottom: 0.6rem;
+    }
+
+    .details__flex {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .add-to-cart {
+      font-weight: 500;
+      transition: $main-transition;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .copies {
+      color: $primary-green;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.book__thumbnail {
+  padding: 0 1rem;
+
+  &--container {
+    width: 22rem;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      .book__thumbnail--overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &--cover {
+    img {
+      width: 100%;
+    }
+  }
+
+  &--overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: $main-transition;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), black);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .available {
+      color: $primary-green;
+      font-weight: normal;
+    }
+
+    .book__details {
+      h4,
+      h5 {
+        font-weight: 500;
+      }
+
+      h4 {
+        font-weight: bold;
+      }
+
+      h4 {
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-top: 0.3rem;
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
-import { Loader } from "./components";
+import { Loader } from "./reusables";
 import AppRouter from "./router";
 
-function App() {
+const App = () => {
   return (
     <Suspense fallback={<Loader />}>
       <HelmetProvider>
@@ -14,6 +14,6 @@ function App() {
       </HelmetProvider>
     </Suspense>
   );
-}
+};
 
 export default App;

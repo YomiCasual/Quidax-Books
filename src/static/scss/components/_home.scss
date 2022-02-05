@@ -1,0 +1,16 @@
+.featured__books {
+  &--container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+.all__books {
+  margin-top: 10rem;
+
+  &--container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 4rem;
+  }
+}
