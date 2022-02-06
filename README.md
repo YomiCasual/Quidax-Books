@@ -43,6 +43,8 @@ This project was bootstrapped with
 6. Adding quantity to the cart drawer cart icon.
 7. To prevent hitting api during details page, the item is passed to the router state and used in the detail page, however if user access the detail page without clicking, the data is fetched using useLazyQuery
 
+8. I thought of reducing the quantity of item when added to cart, but i reasoned that since the item has not been bought then reducing the quantity doesn't make sense. Rather, the user cannot add more than the copies available in the cart. Only when a user makes a purchase does it count as reducing items left. I confirmed with Jumia as reference before proceeding.
+
 ## Requirements Not Covered
 
 All requirements were met according to the documents
