@@ -57,7 +57,7 @@ const FeaturedBooks = () => {
           flickityRef={(ref) => {
             flickityRef.current = ref;
           }}
-          // reloadOnUpdate
+          reloadOnUpdate
         >
           {mappedBooks.map((featuredBook) => (
             <Link
