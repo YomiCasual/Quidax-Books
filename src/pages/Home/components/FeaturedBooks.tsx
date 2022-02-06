@@ -45,16 +45,19 @@ const FeaturedBooks = () => {
             freeScroll: true,
             contain: true,
             adaptiveHeight: true,
+            resize: true,
+            groupCells: true,
+            pageDots: true,
+            prevNextButtons: true,
             cellAlign: "left",
-            autoPlay: 3000,
-            wrapAround: true,
+            autoPlay: true,
             pauseAutoPlayOnHover: true,
-            freeScrollFriction: 0.9,
+            wrapAround: true,
           }}
           flickityRef={(ref) => {
             flickityRef.current = ref;
           }}
-          reloadOnUpdate
+          // reloadOnUpdate
         >
           {mappedBooks.map((featuredBook) => (
             <Link
