@@ -64,7 +64,7 @@ const CartDrawer = () => {
           <section className="cart__drawer--checkout">
             <div className="checkout__total">
               <h5>Subtotal</h5>
-              <h1>${total.toFixed(2)}</h1>
+              <h1 data>${total.toFixed(2)}</h1>
             </div>
             <CheckoutButton
               onClick={checkoutCart}

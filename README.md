@@ -16,7 +16,7 @@ This project was bootstrapped with
 1.  Ensure you have node installed on your system
 2.  Clone the repository by running
     ```
-    git clone https://github.com/
+    git clone https://github.com/YomiCasual/Quidax-Books.git
     ```
 3.  At the root folder run, open the terminal and run:
     ```
@@ -33,7 +33,7 @@ This project was bootstrapped with
      npm run test
     ```
 
-## Project Installation
+## Assumptions/Features added
 
 1. Added Checkout modal.
 2. Wrote Test(Mini)
