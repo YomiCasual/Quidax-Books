@@ -1,4 +1,3 @@
-import React from "react";
 import useGlobalStoreProvider from "../../context";
 import {
   BookCard,
@@ -10,6 +9,7 @@ import {
 import { generateMappedBooks } from "../../utils";
 
 const SearchPage = ({ title = "Search Results" }: { title?: string }) => {
+  // Global State
   const {
     store: {
       searchedBooks: { books = [], filter = "", loading = false },
@@ -23,6 +23,7 @@ const SearchPage = ({ title = "Search Results" }: { title?: string }) => {
   const mappedBooks = generateMappedBooks(books);
 
   const header = `${books.length} results found for "${filter}"`;
+
   return (
     <>
       <DocumentHeader title={title} />

@@ -22,10 +22,7 @@ const HeaderSearch = ({
   toggleSearch: () => void;
 }) => {
   // Lazy Query
-  const [getSearchedBooks, { loading, error, data, refetch }] = useLazyQuery(
-    SEARCH_BOOKS,
-    {}
-  );
+  const [getSearchedBooks, { data }] = useLazyQuery(SEARCH_BOOKS, {});
 
   const navigate = useNavigate();
 
@@ -52,13 +49,16 @@ const HeaderSearch = ({
     navigate(APP_ROUTES.SEARCH);
   };
 
+  // Use Effect
   useEffect(() => {
     if (data) {
+      // All searched books
       const searchedBooks = Object.values(data as object).reduce(
         (acc: any[], curr: any[]) => [...acc, ...curr],
         []
       );
 
+      // Get unique results
       const uniqueResult = uniqueObjArray({ array: searchedBooks, key: "id" });
 
       dispatch({
@@ -69,6 +69,7 @@ const HeaderSearch = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, startSearch]);
 
+  // Clear the search field
   const clearSearchField = () => {
     setSearchInput("");
     dispatch({

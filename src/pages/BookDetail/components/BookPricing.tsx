@@ -1,19 +1,24 @@
-import React from "react";
+// Custom Imports
 import { IMappedBook } from "../../../apollo/types";
 import useGlobalStoreProvider from "../../../context";
 import { CartActions } from "../../../context/reducers";
 import { CheckoutButton, CheckoutButtonSecondary } from "../../../reusables";
 
+//Constants
 const { ADD_TO_CART } = CartActions;
 
 const BookPricing = ({ book }: { book: IMappedBook }) => {
+  // Global store
   const { dispatch } = useGlobalStoreProvider();
 
+  // Destructure properties from book propbs
   const { image_url, available_copies, price, title } = book;
 
+  // Dispatch actions
   const addToCart = () => {
     dispatch({ type: ADD_TO_CART, payload: book });
   };
+
   return (
     <div className="book__pricing">
       <div className="book__pricing--image">

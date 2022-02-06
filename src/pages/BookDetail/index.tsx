@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { BackButton, DocumentHeader, Loader } from "../../reusables";
-import APP_ROUTES from "../../router/constants";
-import { generateSingleMappedBook, isEmpty } from "../../utils";
+
+//Custom Imports
 import { BookPricing, BookSummary } from "./components";
 import { GETBOOK_BY_ID } from "../../apollo/queries";
 import { IBook } from "../../apollo/types";
+import { AppState, BackButton, DocumentHeader, Loader } from "../../reusables";
+import APP_ROUTES from "../../router/constants";
+import { generateSingleMappedBook, isEmpty } from "../../utils";
 
 const BookDetail = ({ title = "Book Detail" }: { title?: string }) => {
   // Lazy Query
@@ -39,7 +41,13 @@ const BookDetail = ({ title = "Book Detail" }: { title?: string }) => {
   }, []);
 
   if (loading) return <Loader />;
-  if (error) return <div>Error</div>;
+  if (error)
+    return (
+      <AppState
+        text="An Error Occurred, Please check your internet connection or try again"
+        isError
+      />
+    );
 
   if (data) {
     routerStateBook = data.book;

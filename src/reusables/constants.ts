@@ -13,6 +13,7 @@ import { ReactComponent as StarIcon } from "../static/svgs/star.svg";
 import { ReactComponent as CaretIcon } from "../static/svgs/caret.svg";
 import { ReactComponent as EmptySvg } from "../static/svgs/empty.svg";
 import { ReactComponent as ErrorSvg } from "../static/svgs/error.svg";
+import { ReactComponent as SuccessSvg } from "../static/svgs/success.svg";
 
 export const QUIDAX_SVGS = {
   ArrowIcon,
@@ -29,4 +30,5 @@ export const QUIDAX_SVGS = {
   StarIcon,
   EmptySvg,
   ErrorSvg,
+  SuccessSvg,
 };

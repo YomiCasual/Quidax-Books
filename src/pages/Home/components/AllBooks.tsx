@@ -1,6 +1,6 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
 
+// Custom Imports
 import { SectionHeader, BookCard, Loader, AppState } from "../../../reusables";
 import { GET_ALL_BOOKS } from "../../../apollo/queries";
 import { IGetAllBooks } from "../../../apollo/types";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const DocumentHeader = ({
@@ -10,12 +9,12 @@ const DocumentHeader = ({
 }): JSX.Element => (
   <Helmet
     titleTemplate="%s | Quidax Books"
-    defaultTitle="AfenGroup"
+    defaultTitle="QuidaxBooks"
     defer={false}
   >
     <title>{title}</title>
     <meta charSet="utf-8" />
-    <meta name="description" content={description || "AfenGroup"} />
+    <meta name="description" content={description || "Quidax Books"} />
     <link rel="canonical" href={window.location.href} />
   </Helmet>
 );

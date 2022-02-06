@@ -1,8 +1,11 @@
-import { VerticalDivider } from "../..";
 import clsx from "clsx";
+
+// Custom Imports
+import { VerticalDivider } from "../../Divider";
 import { QUIDAX_SVGS } from "../../constants";
 import StarRatings from "./StarRatings";
 
+//Constants
 const { PeopleIcon, HeartIcon } = QUIDAX_SVGS;
 
 const CardRatings = ({

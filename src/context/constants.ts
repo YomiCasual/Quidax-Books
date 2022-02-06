@@ -15,7 +15,7 @@ export const modifyCartQuantity = ({
   let newCartItems = [...state.cartItems];
   let cartItem = newCartItems.find((item) => item.id === payload);
 
-  // If it is not in cart return
+  // If it is not in cart return state
   if (!cartItem) {
     return state;
   }

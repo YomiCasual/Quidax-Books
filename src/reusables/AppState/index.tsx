@@ -1,4 +1,3 @@
-import React from "react";
 import { QUIDAX_SVGS } from "../constants";
 
 const { EmptySvg, ErrorSvg } = QUIDAX_SVGS;

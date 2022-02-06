@@ -1,6 +1,9 @@
 import clsx from "clsx";
+
+// Custom Imports
 import { QUIDAX_SVGS } from "../constants";
 
+// constants
 const { CartIcon, ArrowIcon } = QUIDAX_SVGS;
 
 export const CheckoutButton = ({

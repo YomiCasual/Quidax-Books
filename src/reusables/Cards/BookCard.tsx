@@ -1,17 +1,21 @@
-import React from "react";
+import { Link } from "react-router-dom";
+
+// Custom Imports
+import { QUIDAX_SVGS } from "../constants";
 import { IMappedBook } from "../../apollo/types";
 import useGlobalStoreProvider from "../../context";
 import { CartActions } from "../../context/reducers";
-import { QUIDAX_SVGS } from "../constants";
 import CardRatings from "./components/CardRatings";
 
+// Constants
 const { CartIcon } = QUIDAX_SVGS;
-
 const { ADD_TO_CART } = CartActions;
 
 const BookCard = ({ book }: { book: IMappedBook }) => {
+  // Global Store
   const { dispatch } = useGlobalStoreProvider();
 
+  // Destructure Props
   const {
     image_url,
     title,
@@ -23,15 +27,18 @@ const BookCard = ({ book }: { book: IMappedBook }) => {
     mappedPublishedDate,
   } = book;
 
+  // Dispatch action
   const addToCart = () => {
     dispatch({ type: ADD_TO_CART, payload: book });
   };
 
   return (
     <article className="book__card">
-      <section className="book__card--image">
-        <img src={image_url} alt={title} />
-      </section>
+      <Link to={`/detail/${book.id}`}>
+        <section className="book__card--image">
+          <img src={image_url} alt={title} />
+        </section>
+      </Link>
       <section className="book__card--details">
         <div>
           <h5 className="title">{title}</h5>

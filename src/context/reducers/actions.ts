@@ -4,6 +4,7 @@ export const CartActions = {
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
   INCREASE_QUANTITY: "INCREASE_QUANTITY",
   REDUCE_QUANTITY: "REDUCE_QUANTITY",
+  CHECKOUT_CART: "CHECKOUT_CART",
 };
 
 export const SearchBookActions = {

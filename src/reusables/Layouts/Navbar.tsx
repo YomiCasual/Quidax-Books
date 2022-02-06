@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import clsx from "clsx";
 import { Link } from "react-router-dom";
-import APP_ROUTES from "../../router/constants";
-import { QUIDAX_SVGS } from "../constants";
-import CartButton from "./components/CartButton";
-import HeaderSearch from "./components/HeaderSearch";
 
+// Custom Imports
+import { CartButton, HeaderSearch } from "./components";
+import { QUIDAX_SVGS } from "../constants";
+import APP_ROUTES from "../../router/constants";
+
+// Constants
 const { QuidaxLogo, BooksIcon, SearchIcon } = QUIDAX_SVGS;
 
 const Navbar = () => {
@@ -14,6 +17,7 @@ const Navbar = () => {
 
   return (
     <article className="box-shadow navbar__container">
+      <div className={clsx("bg__overlay", showSearch && "show")}></div>
       <div className="max-width navbar">
         <div className="navbar__logo">
           <Link to={APP_ROUTES.HOME}>

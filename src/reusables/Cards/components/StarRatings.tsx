@@ -1,7 +1,8 @@
-import React from "react";
-import { QUIDAX_SVGS } from "../..";
+//Custom Imports
+import { QUIDAX_SVGS } from "../../constants";
 import { generateArray } from "../../../utils";
 
+// Constants
 const { StarIcon } = QUIDAX_SVGS;
 
 const StarRatings = ({ ratings = 0 }: { ratings?: number }) => {

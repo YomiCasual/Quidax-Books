@@ -1,8 +1,9 @@
-import React from "react";
-import { IMappedBook } from "../../apollo/types";
+//Custom Imports
 import CardRatings from "./components/CardRatings";
+import { IMappedBook } from "../../apollo/types";
 
 const BookThumbnail = ({ book }: { book: IMappedBook }) => {
+  //Destructure properties from book props
   const {
     image_url,
     title,

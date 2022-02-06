@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useQuery } from "@apollo/client";
 
 import { Link } from "react-router-dom";

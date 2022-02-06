@@ -1,7 +1,6 @@
-import React from "react";
+import { DETAILS_HEADER } from "../constants";
 import { IMappedBook } from "../../../apollo/types";
 import CardRatings from "../../../reusables/Cards/components/CardRatings";
-import { DETAILS_HEADER } from "../constants";
 
 const BookSummary = ({ book }: { book: IMappedBook }) => {
   const {

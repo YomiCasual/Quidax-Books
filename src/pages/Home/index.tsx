@@ -1,7 +1,5 @@
-import React from "react";
+import { AllBooks, FeaturedBooks } from "./components";
 import { DocumentHeader } from "../../reusables";
-import AllBooks from "./components/AllBooks";
-import FeaturedBooks from "./components/FeaturedBooks";
 
 const Home = ({ title = "Home" }: { title?: string }) => {
   return (

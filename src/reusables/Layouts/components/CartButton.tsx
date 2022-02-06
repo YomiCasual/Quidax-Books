@@ -1,8 +1,9 @@
-import React from "react";
+// Custom Imports
 import { QUIDAX_SVGS } from "../../constants";
 import useGlobalStoreProvider from "../../../context";
 import { CartActions } from "../../../context/reducers";
 
+// Contants
 const { CartIcon } = QUIDAX_SVGS;
 const { TOGGLE_CART } = CartActions;
 
@@ -14,6 +15,7 @@ const CartButton = ({ canToggle = false }: { canToggle?: boolean }) => {
     dispatch,
   } = useGlobalStoreProvider();
 
+  // Dispatch Action
   const toggleCart = () => dispatch({ type: TOGGLE_CART });
   return (
     <div className="cart__button" onClick={() => canToggle && toggleCart()}>

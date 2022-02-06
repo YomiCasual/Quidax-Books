@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 /** Render page loader */
 const Loader = ({ text = "Loading..." }: { text?: string }): JSX.Element => {

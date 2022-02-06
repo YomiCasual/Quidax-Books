@@ -14,6 +14,7 @@ const {
   REMOVE_FROM_CART,
   INCREASE_QUANTITY,
   REDUCE_QUANTITY,
+  CHECKOUT_CART,
 } = CartActions;
 
 export function CartReducer(state: CartStateType, action: ActionType) {
@@ -77,6 +78,13 @@ export function CartReducer(state: CartStateType, action: ActionType) {
         ...state,
         showCart: true,
         cartItems: newCartItems,
+      };
+    }
+
+    case CHECKOUT_CART: {
+      return {
+        showCart: false,
+        cartItems: [],
       };
     }
     default: {

@@ -15,7 +15,7 @@
 
   &__logo {
     @include responsive($tablet) {
-      width: 17rem;
+      width: 12rem;
 
       svg {
         width: 100%;
@@ -51,7 +51,6 @@
 }
 
 .search__input {
-  // @include hide__responsive($desktop-s);
   display: flex;
   align-items: center;
   align-items: stretch;
