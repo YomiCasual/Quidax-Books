@@ -1,9 +1,11 @@
 .app-layout {
   overflow-x: hidden;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .scroll__body {
   overflow-y: scroll;
   max-height: 90vh;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
 }
