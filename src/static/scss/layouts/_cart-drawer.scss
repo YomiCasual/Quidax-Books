@@ -9,7 +9,7 @@
   opacity: 0;
   transition: $main-transition;
 
-  .show {
+  &.show {
     visibility: visible;
     opacity: 1;
   }
@@ -25,7 +25,11 @@
   bottom: 0;
   width: 48rem;
 
-  .show {
+  @include responsive($mobile-l) {
+    width: 100%;
+  }
+
+  &.show {
     transform: translateX(0rem);
   }
 
@@ -68,28 +72,6 @@
         font-weight: 300;
       }
     }
-
-    .checkout__button {
-      @include soft-animate;
-
-      width: 100%;
-      background-color: $primary-black;
-      color: white;
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-
-      path {
-        fill: white;
-      }
-
-      &--text {
-        font-size: 1.8rem;
-        font-weight: 700;
-        flex: auto;
-      }
-    }
   }
 }
 
@@ -98,6 +80,7 @@
   border-bottom: 1px solid #eeeeee;
   gap: 1rem;
   padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
 
   &--image {
     height: 10rem;

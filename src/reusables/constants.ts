@@ -11,9 +11,8 @@ import { ReactComponent as PeopleIcon } from "../static/svgs/people.svg";
 import { ReactComponent as HeartIcon } from "../static/svgs/heart.svg";
 import { ReactComponent as StarIcon } from "../static/svgs/star.svg";
 import { ReactComponent as CaretIcon } from "../static/svgs/caret.svg";
-
-// IMAGES
-import BloodAndAsh from "../static/images/from-blood-and-ash_hs4leq.jpg";
+import { ReactComponent as EmptySvg } from "../static/svgs/empty.svg";
+import { ReactComponent as ErrorSvg } from "../static/svgs/error.svg";
 
 export const QUIDAX_SVGS = {
   ArrowIcon,
@@ -28,8 +27,6 @@ export const QUIDAX_SVGS = {
   QuidaxLogo,
   SearchIcon,
   StarIcon,
-};
-
-export const QUIDAX_BOOK_COVERS = {
-  BloodAndAsh,
+  EmptySvg,
+  ErrorSvg,
 };

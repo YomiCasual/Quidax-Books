@@ -1,0 +1,115 @@
+.book__detail {
+  margin-top: 3rem;
+  &--container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rem;
+    margin-top: 4rem;
+    height: 100%;
+    padding-bottom: 3rem;
+
+    @include responsive($mobile-l) {
+      gap: 3rem !important;
+    }
+  }
+}
+
+.book__pricing {
+  flex: none;
+  width: 24rem !important;
+  height: 100%;
+
+  @include responsive($mobile-l) {
+    height: 40rem;
+  }
+  &--image {
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+    height: 37rem;
+    width: 100% !important;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &--pricing {
+    margin-top: 6rem;
+
+    .copies {
+      color: $primary-green;
+    }
+
+    button {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.book__summary {
+  max-width: 90rem;
+
+  @include responsive($mobile-l) {
+    width: 100%;
+  }
+  &--header {
+    .name {
+      margin-top: 2rem;
+    }
+  }
+  &--subheader {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border : {
+      top: 1px solid #eeeeee;
+      bottom: 1px solid #eeeeee;
+    }
+
+    @include responsive($desktop-s) {
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &--body {
+    font-size: 1.4rem;
+    line-height: 2.1;
+    margin-top: 4rem;
+    text-align: justify;
+  }
+}
+
+.btn-mobile {
+  @extend .show__mobile;
+
+  position: fixed;
+  width: 90%;
+  bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .checkout__button {
+      &--subtitle {
+        color: $primary-green;
+        margin-top: 0.3rem;
+        font-size: 1.2rem;
+      }
+      &--text {
+        font-weight: 500;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .price {
+    font-weight: 200;
+  }
+}

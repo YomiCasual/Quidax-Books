@@ -7,10 +7,22 @@
 
 .all__books {
   margin-top: 10rem;
+  margin-bottom: 20rem;
+
+  &.medium-top {
+    margin-top: 5rem;
+  }
 
   &--container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(270px, 1fr));
     row-gap: 4rem;
+
+    @include responsive($desktop-s) {
+      grid-template-columns: repeat(2, minmax(270px, 1fr));
+    }
+    @include responsive($tablet) {
+      grid-template-columns: repeat(1, minmax(270px, 1fr));
+    }
   }
 }

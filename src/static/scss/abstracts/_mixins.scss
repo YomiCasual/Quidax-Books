@@ -18,3 +18,24 @@
     transform: translateY(-0.5rem);
   }
 }
+
+@mixin hide__responsive($screen-size) {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  @include responsive($screen-size) {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+@mixin show__responsive($screen-size) {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  @include responsive($screen-size) {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+}

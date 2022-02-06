@@ -1,35 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import APP_ROUTES from "../../router/constants";
 import { QUIDAX_SVGS } from "../constants";
+import CartButton from "./components/CartButton";
+import HeaderSearch from "./components/HeaderSearch";
 
-const { QuidaxLogo, SearchIcon, BooksIcon, CartIcon } = QUIDAX_SVGS;
+const { QuidaxLogo, BooksIcon, SearchIcon } = QUIDAX_SVGS;
 
 const Navbar = () => {
+  const [showSearch, setShowSearch] = useState(false);
+
+  const toggleSearch = () => setShowSearch(!showSearch);
+
   return (
     <article className="box-shadow navbar__container">
       <div className="max-width navbar">
         <div className="navbar__logo">
-          <QuidaxLogo />
+          <Link to={APP_ROUTES.HOME}>
+            <QuidaxLogo />
+          </Link>
         </div>
-        <div className="search__input">
-          <input type="text" placeholder="Search books, genres, authors etc." />
-          <div className="search__input--icon">
-            <SearchIcon />
-          </div>
-        </div>
+        <HeaderSearch showSearch={showSearch} toggleSearch={toggleSearch} />
         <div className="navbar__icons">
+          <div className="navbar__icons--books">
+            <div className="search__icon">
+              <SearchIcon onClick={toggleSearch} />
+            </div>
+          </div>
           <div className="navbar__icons--books">
             <div className="book__icon">
               <BooksIcon />
             </div>
           </div>
-          <div className="navbar__icons--books">
-            <div className="cart__icon">
-              <CartIcon />
-            </div>
-            <div className="badge badge-success">
-              <p>3</p>
-            </div>
-          </div>
+          <CartButton canToggle />
         </div>
       </div>
     </article>

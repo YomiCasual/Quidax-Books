@@ -1,10 +1,17 @@
 import { VerticalDivider } from "../..";
 import clsx from "clsx";
 import { QUIDAX_SVGS } from "../../constants";
+import StarRatings from "./StarRatings";
 
-const { PeopleIcon, HeartIcon, StarIcon } = QUIDAX_SVGS;
+const { PeopleIcon, HeartIcon } = QUIDAX_SVGS;
 
-const CardRatings = ({ isWhiteIcon = false }: { isWhiteIcon?: boolean }) => {
+const CardRatings = ({
+  isWhiteIcon = false,
+  rating,
+}: {
+  isWhiteIcon?: boolean;
+  rating?: { likes: number; rating: number };
+}) => {
   // Classname
   const cardRatingItemClass = clsx(
     "card__ratings--item",
@@ -19,16 +26,12 @@ const CardRatings = ({ isWhiteIcon = false }: { isWhiteIcon?: boolean }) => {
       </div>
       <div className={cardRatingItemClass}>
         <HeartIcon />
-        <p>29</p>
+        <p>{rating?.likes}</p>
       </div>
       <VerticalDivider />
       <div className="card__ratings--rating">
-        <p>Rating: 4.0</p>
-        <div>
-          {[1, 2, 3, 4].map((star: number) => (
-            <StarIcon key={star} />
-          ))}
-        </div>
+        <p>Rating: {rating?.rating}</p>
+        <StarRatings ratings={rating?.rating} />
       </div>
     </div>
   );

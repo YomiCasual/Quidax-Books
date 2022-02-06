@@ -1,32 +1,43 @@
 import React from "react";
-import { QUIDAX_BOOK_COVERS } from "../constants";
+import { IMappedBook } from "../../apollo/types";
 import CardRatings from "./components/CardRatings";
 
-const { BloodAndAsh } = QUIDAX_BOOK_COVERS;
+const BookThumbnail = ({ book }: { book: IMappedBook }) => {
+  const {
+    image_url,
+    title,
+    available_copies = 0,
+    mappedAuthors,
+    mappedPublishedDate,
+    mappedGenres,
+    mappedTags,
+    mappedRatings,
+  } = book;
 
-const BookThumbnail = () => {
   return (
     <article className="book__thumbnail">
       <div className="book__thumbnail--container">
         <section className="book__thumbnail--cover">
-          <img src={BloodAndAsh} alt="book-thumbnail" />
+          <img src={image_url} alt="book-thumbnail" />
         </section>
         <section className="book__thumbnail--overlay">
-          <h5 className="available">Available</h5>
+          <h5 className="available">
+            {available_copies ? "Available" : "Sold Out"}
+          </h5>
           <div className="book__details">
-            <h4>Big Magic</h4>
-            <h5>Elizabeth Gilbert</h5>
-            <p>2016</p>
+            <h4>{title}</h4>
+            <h5>{mappedAuthors}</h5>
+            <p>{mappedPublishedDate}</p>
           </div>
           <div className="book__details">
             <h5>Genre</h5>
-            <p>Motivational</p>
+            <p>{mappedGenres}</p>
           </div>
           <div className="book__details">
             <h5>Tags</h5>
-            <p>Creativity, Better Living</p>
+            <p>{mappedTags}</p>
           </div>
-          <CardRatings isWhiteIcon />
+          <CardRatings isWhiteIcon rating={mappedRatings} />
         </section>
       </div>
     </article>
