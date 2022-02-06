@@ -4,7 +4,7 @@ export interface IBook {
     id: string;
     name: string;
   }[];
-  available_copies?: string;
+  available_copies?: number;
   currency?: string;
   featured?: boolean;
   genres?: {

@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="max-width navbar">
         <div className="navbar__logo">
           <Link to={APP_ROUTES.HOME}>
-            <QuidaxLogo />
+            <QuidaxLogo data-testid="quidax-logo" />
           </Link>
         </div>
         <HeaderSearch showSearch={showSearch} toggleSearch={toggleSearch} />

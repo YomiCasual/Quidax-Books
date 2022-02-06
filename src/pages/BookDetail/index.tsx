@@ -53,6 +53,15 @@ const BookDetail = ({ title = "Book Detail" }: { title?: string }) => {
     routerStateBook = data.book;
   }
 
+  if (!routerStateBook) {
+    return (
+      <AppState
+        text="An Error Occurred, Please check your internet connection or try again"
+        isError
+      />
+    );
+  }
+
   const mappedBook = generateSingleMappedBook(routerStateBook as IBook);
 
   return (

@@ -74,3 +74,6 @@ export const uniqueObjArray = ({
   array: Record<string, any>[];
   key: string;
 }) => [...new Map(array.map((item) => [item[key], item])).values()];
+
+export const getAvailableText = (copies: number = 0) =>
+  copies ? `${copies} copies available` : "Out of Stock";

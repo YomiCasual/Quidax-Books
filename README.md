@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+# Quidax Books
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Tools
 
-## Available Scripts
+This project was bootstrapped with
 
-In the project directory, you can run:
+- React(Typescript]
+- Sass (BEM)
+- React Helmet Async (SEO)
+- Context (State Management)
+- React router dom (Route Management)
+- Graphql & Apollo Client (Query calls)
 
-### `npm start`
+## Project Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1.  Ensure you have node installed on your system
+2.  Clone the repository by running
+    ```
+    git clone https://github.com/
+    ```
+3.  At the root folder run, open the terminal and run:
+    ```
+    npm install
+    ```
+4.  Wait for it to install and run:
+    ```
+    npm run start
+    ```
+5.  Wait for the app to build and go to localhost:3000 or the port shown from the terminal
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+6.  To run the test, run:
+    ```
+     npm run test
+    ```
 
-### `npm test`
+## Project Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Added Checkout modal.
+2. Wrote Test(Mini)
+3. User cannot add more than the available copies.
+4. Add different state indicator (Error, Loading, Empty)
+5. User can search search by pressing enter on both mobile or desktop key
+6. Adding quantity to the cart drawer cart icon.
+7. To prevent hitting api during details page, the item is passed to the router state and used in the detail page, however if user access the detail page without clicking, the data is fetched using useLazyQuery
 
-### `npm run build`
+## Requirements Not Covered
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+All requirements were met according to the documents
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Issues you have faced
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Didn't face any issue. In fact I find it as an opportunity to relearn apollo client and graphql. Especially using useLazyQuery for the detail page. To prevent hitting the api many times
 
-### `npm run eject`
+## Constructive FeedBack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To be very candid, the UI design was very awesome and the prototype experience was very seamless. Kudos to UI guy. The way he break down the components and structured the prototype makes it easier for me to have a clear thought pattern and also improve on some of the UIs like the loading state, error state, cart checkout etc. The documentation was also succint about the task and requirements. Kudos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+All in all, I believe it is an interesting task and look forward to have a good review about my solution. Thank you.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Thank You

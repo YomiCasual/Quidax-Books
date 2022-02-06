@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { getAvailableText } from "../../utils";
 
 // Custom Imports
 import { QUIDAX_SVGS } from "../constants";
@@ -38,6 +39,9 @@ export const CheckoutButtonSecondary = ({
   classes?: string;
 }) => {
   const { available_copies = 0, price = 0 } = data;
+
+  const availableText = getAvailableText(available_copies);
+
   return (
     <button
       className={clsx("checkout__button", classes)}
@@ -48,9 +52,7 @@ export const CheckoutButtonSecondary = ({
       </span>
       <div>
         <span className="checkout__button--text">{label}</span>
-        <span className="checkout__button--subtitle">
-          {available_copies} copies available
-        </span>
+        <span className="checkout__button--subtitle">{availableText}</span>
       </div>
       <h2 className="price">${price}</h2>
     </button>

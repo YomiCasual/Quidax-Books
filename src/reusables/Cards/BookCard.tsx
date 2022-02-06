@@ -6,6 +6,7 @@ import { IMappedBook } from "../../apollo/types";
 import useGlobalStoreProvider from "../../context";
 import { CartActions } from "../../context/reducers";
 import CardRatings from "./components/CardRatings";
+import { getAvailableText } from "../../utils";
 
 // Constants
 const { CartIcon } = QUIDAX_SVGS;
@@ -32,6 +33,8 @@ const BookCard = ({ book }: { book: IMappedBook }) => {
     dispatch({ type: ADD_TO_CART, payload: book });
   };
 
+  const availableText = getAvailableText(available_copies);
+
   return (
     <article className="book__card">
       <Link to={`/detail/${book.id}`}>
@@ -50,7 +53,7 @@ const BookCard = ({ book }: { book: IMappedBook }) => {
         <CardRatings rating={mappedRatings} />
         <div className="details__flex">
           <p>${price}</p>
-          <p className="copies">{available_copies} Copies Available</p>
+          <p className="copies">{availableText}</p>
         </div>
         {!!available_copies && (
           <div onClick={addToCart} className="details__flex">
