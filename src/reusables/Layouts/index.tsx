@@ -6,7 +6,7 @@ const AppLayout = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
   return (
     <div className="app-layout">
       <Navbar />
-      {children}
+      <div className="scroll__body">{children}</div>
 
       <CartDrawer />
     </div>

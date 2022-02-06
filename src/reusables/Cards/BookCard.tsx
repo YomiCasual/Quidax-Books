@@ -35,26 +35,30 @@ const BookCard = ({ book }: { book: IMappedBook }) => {
 
   const availableText = getAvailableText(available_copies);
 
+  const detailPage = `/detail/${book.id}`;
+
   return (
     <article className="book__card">
-      <Link to={`/detail/${book.id}`}>
+      <Link to={detailPage}>
         <section className="book__card--image">
           <img src={image_url} alt={title} />
         </section>
       </Link>
       <section className="book__card--details">
-        <div>
-          <h5 className="title">{title}</h5>
-          <p>
-            {mappedAuthors} - {mappedPublishedDate}
-          </p>
-          <p className="small-space">{mappedGenres}</p>
-        </div>
-        <CardRatings rating={mappedRatings} />
-        <div className="details__flex">
-          <p>${price}</p>
-          <p className="copies">{availableText}</p>
-        </div>
+        <Link to={detailPage} className="sub__details">
+          <div>
+            <h5 className="title">{title}</h5>
+            <p>
+              {mappedAuthors} - {mappedPublishedDate}
+            </p>
+            <p className="small-space">{mappedGenres}</p>
+          </div>
+          <CardRatings rating={mappedRatings} />
+          <div className="details__flex">
+            <p>${price}</p>
+            <p className="copies">{availableText}</p>
+          </div>
+        </Link>
         {!!available_copies && (
           <div onClick={addToCart} className="details__flex">
             <CartIcon />

@@ -32,20 +32,15 @@ const HeaderSearch = ({
   // Handle local Input
   const [searchInput, setSearchInput] = useState("");
 
-  const [startSearch, toggleStartSearch] = useState(false);
-
   // Handle form Submit
-  const handleSubmit = (
-    e:
-      | React.FormEvent<HTMLFormElement>
-      | React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     dispatch({
       type: FETCHING_SEARCHED_BOOKS,
     });
-    toggleStartSearch(true);
-    getSearchedBooks({ variables: { filter: searchInput } });
+
+    const { value = "" } = e.target;
+    getSearchedBooks({ variables: { filter: value } });
     navigate(APP_ROUTES.SEARCH);
   };
 
@@ -61,13 +56,20 @@ const HeaderSearch = ({
       // Get unique results
       const uniqueResult = uniqueObjArray({ array: searchedBooks, key: "id" });
 
-      dispatch({
-        type: STORE_SEARCHED_BOOKS,
-        payload: { books: uniqueResult, filter: searchInput },
-      });
+      if (searchInput) {
+        dispatch({
+          type: STORE_SEARCHED_BOOKS,
+          payload: { books: uniqueResult, filter: searchInput },
+        });
+      } else {
+        dispatch({
+          type: STORE_SEARCHED_BOOKS,
+          payload: { books: [], filter: searchInput },
+        });
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, startSearch]);
+  }, [data, searchInput]);
 
   // Clear the search field
   const clearSearchField = () => {
@@ -75,7 +77,6 @@ const HeaderSearch = ({
     dispatch({
       type: CLEAR_SEARCHED_BOOKS,
     });
-    navigate(APP_ROUTES.HOME);
   };
 
   return (
@@ -83,11 +84,14 @@ const HeaderSearch = ({
       <div className="arrow__icon" onClick={toggleSearch}>
         <ArrowIcon />
       </div>
-      <form className="search__input" onSubmit={handleSubmit}>
+      <div className="search__input">
         <input
           type="text"
           value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
+          onChange={(e) => {
+            setSearchInput(e.target.value);
+            handleSubmit(e);
+          }}
           placeholder="Search books, genres, authors etc."
         />
         {searchInput ? (
@@ -95,11 +99,11 @@ const HeaderSearch = ({
             <CloseIcon />
           </div>
         ) : (
-          <div className="search__input--icon" onClick={handleSubmit}>
+          <div className="search__input--icon">
             <SearchIcon />
           </div>
         )}
-      </form>
+      </div>
     </div>
   );
 };
