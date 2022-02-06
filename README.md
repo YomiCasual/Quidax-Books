@@ -43,7 +43,7 @@ This project was bootstrapped with
 6. Adding quantity to the cart drawer cart icon.
 7. To prevent hitting api during details page, the item is passed to the router state and used in the detail page, however if user access the detail page without clicking, the data is fetched using useLazyQuery
 
-8. I thought of reducing the available copies when added to cart, but i reasoned that since the book has not been bought then reducing the available copies doesn't make sense. Rather, the user cannot add more than the available copies in the cart. Only when a user makes a purchase does it count as reducing available copies left. I confirmed with Jumia as reference before proceeding.
+8. I thought of reducing the available copies when added to cart, but i reasoned that since the book has not been bought then reducing the available copies doesn't make sense. Rather, the user cannot add more than the available copies in the cart. Only when a user makes a purchase does it count as reducing available copies left. I confirmed with Jumia & Konga as reference before proceeding.
 
 ## Requirements Not Covered
 
