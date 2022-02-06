@@ -48,6 +48,7 @@ const FeaturedBooks = () => {
             cellAlign: "left",
             autoPlay: 3000,
             wrapAround: true,
+            pauseAutoPlayOnHover: true,
             freeScrollFriction: 0.9,
           }}
           flickityRef={(ref) => {
