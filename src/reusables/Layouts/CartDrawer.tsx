@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 // Custom Imports
-import { CartButton, CheckoutModal } from "./components";
+import { CartButton, CheckoutModal } from "./components/";
 import { CartItem, CheckoutButton } from "../";
 import AppState from "../AppState";
 import { BackButton } from "../Buttons";
@@ -64,7 +64,7 @@ const CartDrawer = () => {
           <section className="cart__drawer--checkout">
             <div className="checkout__total">
               <h5>Subtotal</h5>
-              <h1 data>${total.toFixed(2)}</h1>
+              <h1>${total.toFixed(2)}</h1>
             </div>
             <CheckoutButton
               onClick={checkoutCart}
