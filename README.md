@@ -47,7 +47,7 @@ This project was bootstrapped with
 
 All requirements were met according to the documents
 
-## Issues you have faced
+## Issues faced
 
 Didn't face any issue. In fact I find it as an opportunity to relearn apollo client and graphql. Especially using useLazyQuery for the detail page. To prevent hitting the api many times
 
@@ -55,6 +55,6 @@ Didn't face any issue. In fact I find it as an opportunity to relearn apollo cli
 
 To be very candid, the UI design was very awesome and the prototype experience was very seamless. Kudos to UI guy. The way he break down the components and structured the prototype makes it easier for me to have a clear thought pattern and also improve on some of the UIs like the loading state, error state, cart checkout etc. The documentation was also succint about the task and requirements. Kudos
 
-All in all, I believe it is an interesting task and look forward to have a good review about my solution. Thank you.
+All in all, I believe it is an interesting task and look forward to have a good review about my assessment. Thank you.
 
 ## Thank You
